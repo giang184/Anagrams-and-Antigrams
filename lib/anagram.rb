@@ -7,7 +7,7 @@ def anagram(word1, word2)
     "'#{word2}' is not a word"
   elsif temp1 == temp2
     "'#{word1}' and '#{word2}' are ANAGRAMS"
-  elsif !/[${temp1}]/.match?(temp2)
+  elsif !(/[#{temp1}]/.match?(temp2))
     "'#{word1}' and '#{word2}' are ANTIGRAMS"
   else
     "'#{word1}' and '#{word2}' ARE NEITHER anagrams nor antigrams"
