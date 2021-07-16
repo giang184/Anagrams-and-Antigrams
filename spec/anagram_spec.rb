@@ -12,4 +12,7 @@ describe('#title_case') do
   it("Checks if two scrambled words are anagrams") do
     expect(anagram('hello', 'olleh')).to(eq("'hello' and 'olleh' ARE anagrams"))
   end
+  it("Checks if two scrambled words are anagrams, accouting for the possibility for lower and upper case") do
+    expect(anagram('Tea', 'Eat')).to(eq("'Tea' and 'Eat' ARE anagrams"))
+  end
 end
