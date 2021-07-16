@@ -17,11 +17,11 @@ class Words
     elsif !(/[#{temp1}]/.match?(temp2))
       "'#{@word}' and '#{word2}' are ANTIGRAMS"
     else
-      "'#{@word}' and '#{word2}' ARE NEITHER anagrams nor antigrams" + match(word2)
+      "'#{@word}' and '#{word2}' ARE NEITHER anagrams nor antigrams" + search_matching_letters(word2)
     end
   end
 
-  def match(word2)
+  def search_matching_letters(word2)
     if(word2.length() > @word.length())
       short = @word
       long = word2

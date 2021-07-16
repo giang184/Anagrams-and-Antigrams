@@ -1,56 +1,46 @@
+# Anagrams and Antigrams by Andrew Giang
+This project contains a class that will check for anagrams and antigrams. There is a spec file with 8 test cases and a simple script file that will prompt for user inputs in the command line. 
+
+## Technology Used
+* _Ruby_
+* _Docker_
+* _Ruby Gems: rspec, pry_
+
 ## Description
 
-This template repository includes a basic setup for using Docker to run RSpec tests, Pry, and Ruby scripts using Ruby 2.6.5. 
+ Two words are anagrams if they contain the exact same letters in a different order. For example, "ruby" and "bury" are anagrams because they contain the same letters. For our purposes, a word is an "antigram" of another word if no letters match. For example, "hi" has no matches with "bye". The class method anagram() will accomplish the following objectives:
 
-To use Docker, you will first need to [install](https://docs.docker.com/get-docker/) it. Once it's installed, Docker should be open so you can actually run Docker commands in the terminal.
+* Check if two words are anagrams
+* Account for the possibility that words might have different cases but should still be anagrams.
+* Check if the inputs are words.
+* Check for antigrams
+* Account for two sentences being compared as anagrams or "antigrams."
 
-## Running IRB
+## Set up and Installation
 
-You don't need this setup for running IRB (Ruby REPL) by itself. To use IRB on its own, do the following (after Docker is installed and open):
+* This project runs on Ruby or Docker. You need to have either application installed on your local machine.
+* Download or Clone this directory into your local drive. 
+* The repository contains a simple project that tests a simple class that checks for anagram and antigrams. To run tests on the current code, simply run the command `docker-compose up` in the root directory of this project.
+* To run tests on your own code, replace the `lib` and `spec` directories with your own source code (for `lib`) and tests (for `spec`). Then run the command `docker-compose up --build` in terminal
+* You can create an alias for the following commands. The alias should look something like this:
+      
+      dspec ()
+      {
+        docker-compose down
+        docker-compose up --build
+        docker-compose run --rm app
+      }
+      
+* With this alias, the `dspec` command will automatically run RSpec tests. You can use `binding.pry` as needed.
 
-```
-$ docker pull ruby:2.6.5
-```
+## Known Bugs
 
-This pulls down the image of Ruby we use at Epicodus. You only need to do this once.
+* My script seems to not putting out the prompts for user input.
 
-Once you have it on your machine, you can run IRB with the following command:
+## License
 
-```
-$ docker run -it ruby:2.6.5 irb
-```
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
 
-We recommend creating an alias (called something like `dirb` for Docker IRB) to make the command easier to use.
+## Contact Information
 
-You can exit IRB as normal by typing `exit`.
-
-## Using This Repository for Docker
-
-This repository is a template repository. To use it, start by creating a new repository with `ruby-rspec-docker-container` as a template. Clone that repository down to your desktop.
-
-The repository contains a simple project that tests a simple `title_case` method. To run tests on the current code, simply run the command `docker-compose up` in the root directory of this project.
-
-To run tests on your own code, replace the `lib` and `spec` directories with your own source code (for `lib`) and tests (for `spec`).
-
-We recommend creating an alias for the following commands. The alias should look something like this:
-
-```
-dspec ()
-{
-  docker-compose down
-  docker-compose up --build
-  docker-compose run --rm app
-}
-```
-
-With this alias, the `dspec` command will automatically run RSpec tests. You can use `binding.pry` as needed.
-
-### Running Scripts
-
-Running scripts is optional at Epicodus. However, if you want to experiment with it, follow these steps:
-
-* The script must be located in `lib` and be called `script.rb`.
-
-* Run the following command: `docker-compose run --rm app ruby lib/script.rb`.
-
-Once again, we recommend aliasing this command if you plan to run scripts often. If you prefer to name your script something else, you just need to update the command to use the correct path and file name.
+Andrew Giang | giang184@gmail.com
