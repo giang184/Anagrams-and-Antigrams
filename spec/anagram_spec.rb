@@ -15,4 +15,13 @@ describe('#title_case') do
   it("Checks if two scrambled words are anagrams, accouting for the possibility for lower and upper case") do
     expect(anagram('Tea', 'Eat')).to(eq("'Tea' and 'Eat' ARE anagrams"))
   end
+  it("Checks if word1 is a word w/o vowels") do
+    expect(anagram('stmp', 'Eat')).to(eq("'stmp' is not a word"))
+  end
+  it("Checks if word2 is a word w/o vowels") do
+    expect(anagram('foo', 'jklt')).to(eq("'jklt' is not a word"))
+  end
+  it("Checks for antigrams") do
+    expect(anagram('foo', 'kit')).to(eq("'foo' and 'kit' are ANTIGRAMS"))
+  end
 end
