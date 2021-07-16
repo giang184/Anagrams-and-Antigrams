@@ -7,10 +7,6 @@ describe('#anagram') do
     my_words = Words.new('hello')
     expect(my_words.anagram('hello')).to(eq("'hello' and 'hello' are ANAGRAMS"))
   end
-  it("Checks that two different words are not anagrams") do
-    my_words = Words.new('hello')
-    expect(my_words.anagram('oell')).to(eq("'hello' and 'oell' ARE NEITHER anagrams nor antigrams"))
-  end
   it("Checks if two scrambled words are anagrams") do
     my_words = Words.new('hello')
     expect(my_words.anagram('olleh')).to(eq("'hello' and 'olleh' are ANAGRAMS"))
@@ -34,5 +30,10 @@ describe('#anagram') do
   it("Checks if two sentences are anagrams") do
     my_words = Words.new('The Morse Code')
     expect(my_words.anagram('Here come dots!')).to(eq("'The Morse Code' and 'Here come dots!' are ANAGRAMS"))
+  end
+
+  it("Checks if two words have overlapping letters") do
+    my_words = Words.new('cat')
+    expect(my_words.anagram('batty')).to(eq("'cat' and 'batty' ARE NEITHER anagrams nor antigrams, but they have 2 matching letters: a, t"))
   end
 end
