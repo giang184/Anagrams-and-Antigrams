@@ -1,27 +1,27 @@
 class Words
-  attr_reader(:word1, :word2)
+  attr_reader(:word)
 
-  def initialize(word1, word2)
-    @word1 = word1
-    @word2 = word2
+  def initialize(word)
+    @word = word
   end
 
-  def anagram()
-    temp1 = @word1.downcase.chars.sort.join.gsub(/[^a-z]/, '')
-    temp2 = @word2.downcase.chars.sort.join.gsub(/[^a-z]/, '')
+  def anagram(word2)
+    temp1 = @word.downcase.chars.sort.join.gsub(/[^a-z]/, '')
+    temp2 = word2.downcase.chars.sort.join.gsub(/[^a-z]/, '')
     if !/[aeiouy]/.match?(temp1)
-      "'#{@word1}' is not a word"
+      "'#{@word}' is not a word"
     elsif (!/[aeiouy]/.match?(temp2))
-      "'#{@word2}' is not a word"
+      "'#{word2}' is not a word"
     elsif temp1 == temp2
-      "'#{@word1}' and '#{@word2}' are ANAGRAMS"
+      "'#{@word}' and '#{word2}' are ANAGRAMS"
     elsif !(/[#{temp1}]/.match?(temp2))
-      "'#{@word1}' and '#{@word2}' are ANTIGRAMS"
+      "'#{@word}' and '#{word2}' are ANTIGRAMS"
     else
-      "'#{@word1}' and '#{@word2}' ARE NEITHER anagrams nor antigrams"
+      "'#{@word}' and '#{word2}' ARE NEITHER anagrams nor antigrams" + match()
     end
   end
 
   def match()
+    ""
   end
 end
