@@ -31,7 +31,6 @@ describe('#anagram') do
     my_words = Words.new('The Morse Code')
     expect(my_words.anagram('Here come dots!')).to(eq("'The Morse Code' and 'Here come dots!' are ANAGRAMS"))
   end
-
   it("Checks if two words have overlapping letters") do
     my_words = Words.new('cat')
     expect(my_words.anagram('batty')).to(eq("'cat' and 'batty' ARE NEITHER anagrams nor antigrams, but they have 2 matching letters: a, t"))
